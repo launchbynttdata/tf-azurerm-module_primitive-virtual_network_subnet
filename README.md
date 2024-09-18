@@ -5,7 +5,7 @@
 
 ## Overview
 
-This module creates a subnet in an Azure Virtual. It is designed to be used as a primitive in a collection or reference architecture module.
+This module creates a subnet in an Azure Virtual Network. It is designed to be used as a primitive in a collection or reference architecture module.
 
 ## Pre-Commit hooks
 
@@ -115,7 +115,7 @@ If `make check` target is successful, developer is good to commit the code to pr
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.110.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.116.0 |
 
 ## Modules
 
