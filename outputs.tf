@@ -17,3 +17,7 @@ output "id" {
 output "subnet" {
   value = azurerm_subnet.subnet
 }
+
+output "resource_group_name" {
+  value = azurerm_subnet.subnet.resource_group_name
+}
