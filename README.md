@@ -103,19 +103,13 @@ If `make check` target is successful, developer is good to commit the code to pr
 - runs `conftests`. `conftests` make sure `policy` checks are successful.
 - runs `terratest`. This is integration test suit.
 - runs `opa` tests
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0, < 2.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 3.110 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.116.0 |
 
 ## Modules
 
@@ -135,24 +129,24 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_name"></a> [name](#input\_name) | Name of the subnet | `string` | n/a | yes |
-| <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Name of the resource group in which to create the subnet | `string` | n/a | yes |
-| <a name="input_virtual_network_name"></a> [virtual\_network\_name](#input\_virtual\_network\_name) | Name of the virtual network | `string` | n/a | yes |
 | <a name="input_address_prefix"></a> [address\_prefix](#input\_address\_prefix) | CIDR block that represents the IP address space of the subnet | `string` | n/a | yes |
-| <a name="input_delegations"></a> [delegations](#input\_delegations) | Map of service delegations for the subnet | <pre>map(object({<br>    service_name    = string<br>    service_actions = list(string)<br>  }))</pre> | `{}` | no |
-| <a name="input_service_endpoints"></a> [service\_endpoints](#input\_service\_endpoints) | List of service endpoints to associate with the subnet | `list(string)` | `[]` | no |
-| <a name="input_private_endpoint_network_policies"></a> [private\_endpoint\_network\_policies](#input\_private\_endpoint\_network\_policies) | Possible values are 'Disabled', 'Enabled', 'NetworkSecurityGroupEnabled' and 'RouteTableEnabled' | `string` | `"Disabled"` | no |
-| <a name="input_private_link_service_network_policies_enabled"></a> [private\_link\_service\_network\_policies\_enabled](#input\_private\_link\_service\_network\_policies\_enabled) | Enable network policies for the private link service on the subnet | `bool` | `true` | no |
+| <a name="input_delegations"></a> [delegations](#input\_delegations) | Map of service delegations for the subnet | <pre>map(object({<br/>    service_name    = string<br/>    service_actions = list(string)<br/>  }))</pre> | `{}` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name of the subnet | `string` | n/a | yes |
 | <a name="input_network_security_group_id"></a> [network\_security\_group\_id](#input\_network\_security\_group\_id) | ID of the network security group to associate with the subnet | `string` | `null` | no |
 | <a name="input_network_security_group_name"></a> [network\_security\_group\_name](#input\_network\_security\_group\_name) | Name of the network security group to associate with the subnet. Only used when `network_security_group_id` is not set | `string` | `null` | no |
+| <a name="input_private_endpoint_network_policies"></a> [private\_endpoint\_network\_policies](#input\_private\_endpoint\_network\_policies) | Possible values are 'Disabled', 'Enabled', 'NetworkSecurityGroupEnabled' and 'RouteTableEnabled' | `string` | `"Disabled"` | no |
+| <a name="input_private_link_service_network_policies_enabled"></a> [private\_link\_service\_network\_policies\_enabled](#input\_private\_link\_service\_network\_policies\_enabled) | Enable network policies for the private link service on the subnet | `bool` | `true` | no |
+| <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Name of the resource group in which to create the subnet | `string` | n/a | yes |
 | <a name="input_route_table_id"></a> [route\_table\_id](#input\_route\_table\_id) | ID of the route table to associate with the subnet | `string` | `null` | no |
 | <a name="input_route_table_name"></a> [route\_table\_name](#input\_route\_table\_name) | Name of the route table to associate with the subnet. Only used when `route_table_id` is not set | `string` | `null` | no |
+| <a name="input_service_endpoints"></a> [service\_endpoints](#input\_service\_endpoints) | List of service endpoints to associate with the subnet | `list(string)` | `[]` | no |
+| <a name="input_virtual_network_name"></a> [virtual\_network\_name](#input\_virtual\_network\_name) | Name of the virtual network | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | n/a |
-| <a name="output_subnet"></a> [subnet](#output\_subnet) | n/a |
 | <a name="output_resource_group_name"></a> [resource\_group\_name](#output\_resource\_group\_name) | n/a |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+| <a name="output_subnet"></a> [subnet](#output\_subnet) | n/a |
+<!-- END_TF_DOCS -->
