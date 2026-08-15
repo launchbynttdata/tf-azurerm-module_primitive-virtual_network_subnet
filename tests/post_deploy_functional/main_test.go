@@ -17,11 +17,11 @@ import (
 
 	"github.com/launchbynttdata/lcaf-component-terratest/lib"
 	"github.com/launchbynttdata/lcaf-component-terratest/types"
-	"github.com/launchbynttdata/tf-azurerm-module_primitive-redis_cache/tests/testimpl"
+	"github.com/launchbynttdata/tf-azurerm-module_primitive-virtual_network_subnet/tests/testimpl"
 )
 
 const (
-	testConfigsExamplesFolderDefault = "../../examples"
+	testConfigsExamplesFolderDefault = "../../examples/complete"
 	infraTFVarFileNameDefault        = "test.tfvars"
 )
 

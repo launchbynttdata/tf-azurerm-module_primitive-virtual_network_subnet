@@ -5,7 +5,6 @@ go 1.21
 require (
 	github.com/gruntwork-io/terratest v0.47.2
 	github.com/launchbynttdata/lcaf-component-terratest v1.0.4
-	github.com/launchbynttdata/tf-azurerm-module_primitive-redis_cache v0.0.0-20240607135330-36e03728de0f
 	github.com/stretchr/testify v1.9.0
 )
 
