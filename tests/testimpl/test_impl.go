@@ -29,17 +29,17 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 }
 
 func checkSubnetId(t *testing.T, ctx types.TestContext, subscriptionId string, cred *azidentity.DefaultAzureCredential) {
-	resourceGroupName := terraform.Output(t, ctx.TerratestTerraformOptions(), "resource_group_name")
-	virtualNetworkName := terraform.Output(t, ctx.TerratestTerraformOptions(), "virtual_network_name")
-	subnetName := terraform.Output(t, ctx.TerratestTerraformOptions(), "azurerm_subnet_name")
-	subnetId := terraform.Output(t, ctx.TerratestTerraformOptions(), "azurerm_subnet_id")
+	resourceGroupName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "resource_group_name")
+	virtualNetworkName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "virtual_network_name")
+	subnetName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "azurerm_subnet_name")
+	subnetId := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "azurerm_subnet_id")
 
 	client := getSubnetsClientClient(t, subscriptionId, cred)
 
 	subnet, err := client.Get(context.TODO(), resourceGroupName, virtualNetworkName, subnetName, nil)
-    if err != nil {
-        t.Fatalf("failed to get subnet: %v", err)
-    }
+	if err != nil {
+		t.Fatalf("failed to get subnet: %v", err)
+	}
 
 	assert.Equal(t, *subnet.ID, subnetId, "Subnet ID does not match")
 }
