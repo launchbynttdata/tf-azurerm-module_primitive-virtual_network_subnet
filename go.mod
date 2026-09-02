@@ -1,6 +1,6 @@
 module github.com/launchbynttdata/tf-azurerm-module_primitive-virtual_network_subnet
 
-go 1.26.7
+go 1.26.1
 
 tool github.com/golangci/golangci-lint/v2/cmd/golangci-lint
 

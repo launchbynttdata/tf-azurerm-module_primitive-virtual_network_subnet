@@ -12,7 +12,7 @@
 
 module "resource_names" {
   source  = "terraform.registry.launch.nttdata.com/module_library/resource_name/launch"
-  version = "~> 1.0"
+  version = "~> 2.0"
 
   for_each = var.resource_names_map
 
@@ -28,7 +28,7 @@ module "resource_names" {
 
 module "resource_group" {
   source  = "terraform.registry.launch.nttdata.com/module_primitive/resource_group/azurerm"
-  version = "~> 1.0"
+  version = "~> 1.2"
 
 
   name     = module.resource_names["resource_group"].minimal_random_suffix
@@ -39,7 +39,7 @@ module "resource_group" {
 
 module "virtual_network" {
   source  = "terraform.registry.launch.nttdata.com/module_primitive/virtual_network/azurerm"
-  version = "~> 3.0"
+  version = "~> 3.2"
 
   resource_group_name = module.resource_group.name
   vnet_name           = module.resource_names["virtual_network"].minimal_random_suffix
@@ -56,7 +56,7 @@ module "virtual_network" {
 
 module "network_security_group" {
   source  = "terraform.registry.launch.nttdata.com/module_primitive/network_security_group/azurerm"
-  version = "~> 1.0"
+  version = "~> 1.1"
 
   name                = var.network_security_group_name
   resource_group_name = module.resource_group.name

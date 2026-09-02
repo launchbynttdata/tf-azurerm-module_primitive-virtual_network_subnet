@@ -108,7 +108,7 @@ If `make check` target is successful, developer is good to commit the code to pr
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0, < 2.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 3.110 |
 
 ## Modules
@@ -130,7 +130,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_address_prefix"></a> [address\_prefix](#input\_address\_prefix) | CIDR block that represents the IP address space of the subnet | `string` | n/a | yes |
-| <a name="input_delegations"></a> [delegations](#input\_delegations) | Map of service delegations for the subnet | <pre>map(object({<br>    service_name    = string<br>    service_actions = list(string)<br>  }))</pre> | `{}` | no |
+| <a name="input_delegations"></a> [delegations](#input\_delegations) | Map of service delegations for the subnet | <pre>map(object({<br/>    service_name    = string<br/>    service_actions = list(string)<br/>  }))</pre> | `{}` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the subnet | `string` | n/a | yes |
 | <a name="input_network_security_group_id"></a> [network\_security\_group\_id](#input\_network\_security\_group\_id) | ID of the network security group to associate with the subnet | `string` | `null` | no |
 | <a name="input_network_security_group_name"></a> [network\_security\_group\_name](#input\_network\_security\_group\_name) | Name of the network security group to associate with the subnet. Only used when `network_security_group_id` is not set | `string` | `null` | no |
